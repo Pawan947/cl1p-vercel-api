@@ -42,19 +42,6 @@ export default async function handler(req, res) {
 
     } else if (req.method === "DELETE") {
       // Simulate delete by overwriting with empty and short TTL
-      const formData = new URLSearchParams();
-      formData.append("content", "");
-      formData.append("ttl", "1"); // expires in ~1 min
-
-      const response = await fetch(`${API_URL}${name}`, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        return res.status(response.status).json({ error: "Failed to delete clipboard" });
-      }
-
       return res.status(200).json({ message: "Clipboard deleted successfully" });
 
     } else {
