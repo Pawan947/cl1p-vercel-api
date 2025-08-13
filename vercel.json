@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/cl1p.py": {
-      "runtime": "python3.9"
-    }
-  }
-}
